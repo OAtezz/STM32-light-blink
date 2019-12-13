@@ -1,7 +1,6 @@
-#include <Arduino.h>
-#define RED_PIN 9
-#define GREEN_PIN 10
-#define BLUE_PIN 11
+#define RED_PIN PB1
+#define GREEN_PIN PB0
+#define BLUE_PIN PA7
 
 int RED = 255, GREEN = 255, BLUE = 255;
 
