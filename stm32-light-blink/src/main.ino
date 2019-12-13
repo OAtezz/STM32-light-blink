@@ -66,17 +66,34 @@ void delay(void)
 	}
 }*/
 
+#include <Arduino.h>
+#define RED_PIN PB1
+#define GREEN_PIN PB0
+#define BLUE_PIN PA7
 
-#define red PB1
-#define green PB0
-#define blue PA7
+int RED = 255, GREEN = 255, BLUE = 255;
 
 void setup(){
-	pinMode(red, OUTPUT);
-
+	Serial.begin(115200);
+	pinMode(RED_PIN, OUTPUT);
+	pinMode(GREEN_PIN, OUTPUT);
+	pinMode(BLUE_PIN, OUTPUT);
+	setLed(RED,GREEN,BLUE);
 }
 
 void loop(){
-	digitalWrite(red, HIGHT);
+	//digitalWrite(red, HIGHT);
 
+}
+
+void RGB_FADE(){
+	LED.setfunction(fade);
+
+
+}
+
+void setLed(int RED, int GREEN, int BLUE){
+	analogWrite(RED_PIN, RED);
+	analogWrite(GREEN_PIN, GREEN);
+	analogWrite(BLUE_PIN, BLUE);
 }
